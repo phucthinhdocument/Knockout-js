@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <title>KnockoutJS Computed Observables</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Css/style.css" />
+    <style>
+        body,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container con">
+        <div class="row">
+            
+            <div class="col-md-3 maytinh">
+
+                <b href="#">Máy tính</b>
+                <div class="hi">
+                    <button class="btn-danger" id="x" data-bind="click: show">x</button>
+
+                    <button class="btn-warning" id="no" data-bind="click: show">-</button>
+                </div>
+
+                <div data-bind="visible: table2num">
+                    số thứ nhất
+                    <input class="form-control" data-bind="value: num1" />
+                    <br> số thứ hai
+                    <input class="form-control" data-bind="value:num2">
+                    <br>
+                    <div style="display: flex"> Kết quả
+                        <input disabled class="form-control" data-bind="value: ketqua" /> </div>
+                    <br>
+                    <center class=" bt">
+                        <button class="btn btn-info" id="cong" data-bind="click: pheptinh">+ </button>
+                        <button class="btn btn-info" id="tru" data-bind="click: pheptinh">- </button>
+                        <button class="btn btn-info" id="nhan" data-bind="click: pheptinh">X </button>
+                        <button class="btn btn-info" id="chia" data-bind="click: pheptinh">/ </button>
+                    </center>
+                </div>
+                <div data-bind="visible: resultVis">
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+               <b style="text-align: center"> Lịch sử tính toán</b>
+                <table class="table">
+                    <thead>
+                    <tr class="info">
+                        
+                        <th>Stt<th>
+                        <th>Phép tính<th>
+                        <th>Ngày<th>
+                        <th>Xóa<th>
+                     </tr>
+                    </thead>
+                    <tbody data-bind="foreach: historyList">
+                        <tr class="success">
+                            <td data-bind="text: $index"><td>
+                            <td data-bind="text: cacu"><td>
+                            <td data-bind="text: date"><td>
+                            <td><button data-bind="$parent.">Xóa</button> <td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <script src="Knockout/knocktest.js">
+    </script>
+
+</body>
+
+</html>
